@@ -1,0 +1,11 @@
+# large model files and intermediates (do not commit)
+*.gguf
+*.imatrix
+*.safetensors
+models/
+hf/
+llama.cpp/
+# python / notebooks
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
