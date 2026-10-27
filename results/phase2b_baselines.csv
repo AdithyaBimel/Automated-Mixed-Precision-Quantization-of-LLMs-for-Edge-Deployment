@@ -1,0 +1,13 @@
+name,size_mb,imatrix,test_ppl,note
+ref_F16,3094,no,9.6817,size from Phase 1
+ref_Q8_0,1647,no,9.7018,all tensors q8_0 (ref_HIGH_test)
+Q6_K,1273,no,9.7616,
+Q6_K,1273,yes,9.7425,
+Q5_K_M,1125,no,9.8090,
+Q5_K_M,1125,yes,9.7894,
+Q4_K_M,986,no,10.0451,
+Q4_K_M,986,yes,9.9820,
+Q3_K_M,824,no,11.3174,
+Q3_K_M,824,yes,10.7184,
+Q2_K,676,no,22.7203,
+Q2_K,676,yes,12.8939,

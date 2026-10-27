@@ -1,0 +1,34 @@
+=== preset anatomy (cell 13) ===
+preset_imx_Q4_K_M: size=986 MB test ppl=9.9820 search ppl=8.9310 unmapped tensors=0
+
+Mean bits per weight of the imatrix Q4_K_M preset, by kind and position:
+
+[table]
+part         first blocks  last blocks  middle   n/a
+kind                                                
+attn_k               4.50         4.50    4.50   NaN
+attn_output          4.50         4.50    4.50   NaN
+attn_q               4.50         4.50    4.50   NaN
+attn_v               6.56         6.56    5.36   NaN
+ffn_down             6.56         6.56    5.36   NaN
+ffn_gate             4.50         4.50    4.50   NaN
+ffn_up               4.50         4.50    4.50   NaN
+token_embd            NaN          NaN     NaN  6.56
+embedding type: Q6_K
+
+=== experiments A and B (cell 15) ===
+EXPERIMENT A: embedding precision (everything else q8_0), perplexity increase on the search text
+  token_embd at q4_k: ppl 8.9648  (+3.70%)
+  token_embd at q5_k: ppl 8.7108  (+0.76%)
+  token_embd at q6_k: ppl 8.6586  (+0.16%)
+
+EXPERIMENT B: additivity (all blocks of the kind at q3_k, everything else q8_0), damage in nats
+  single: {'ffn_down': 0.0409, 'attn_v': 0.0101, 'ffn_up': 0.0392}
+  ffn_down+attn_v: joint 0.0519 vs sum of singles 0.0510
+  all three: joint 0.0938 vs sum of singles 0.0902
+
+=== search summaries ===
+== Q4_K_M_guided: search ppl 8.9310 -> 8.8646 (+0.75% better), size 985 MB vs preset 986 MB
+   check: mapped seed 8.9310 vs preset file 8.9310 (should match closely; 0 tensors had to be remapped)
+== Q4_K_M_random: search ppl 8.9310 -> 8.8826 (+0.54% better), size 986 MB vs preset 986 MB
+   check: mapped seed 8.9310 vs preset file 8.9310 (should match closely; 0 tensors had to be remapped)

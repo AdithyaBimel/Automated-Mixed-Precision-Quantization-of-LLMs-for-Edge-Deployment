@@ -1,0 +1,9 @@
+                      config   size_mb  search_ppl  test_ppl  hellaswag  \
+0          preset imx Q4_K_M  986.0482      8.9310    9.9820      64.50   
+1  guided search from Q4_K_M  984.7826      8.8646    9.9555      63.50   
+2  random search from Q4_K_M  985.8823      8.8826    9.9818      63.75   
+
+   gpu_tg_tps  vs_preset_pct  
+0    148.4494         0.0000  
+1    148.2367         0.2662  
+2    146.1008         0.0020  
